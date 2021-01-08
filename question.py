@@ -1,6 +1,5 @@
 
 import csv
-students = []
 fields = []
 
 with open('files/course.csv', newline='') as csv_file:
@@ -10,7 +9,7 @@ with open('files/course.csv', newline='') as csv_file:
     def studentByQualification(qualification):
             for row in csv_reader:
                 if row[4]==qualification:
-                    print(row[0])
+                    print(list(row))
                 else:
                     pass
 
@@ -59,7 +58,7 @@ with open('files/course.csv', newline='') as csv_file:
 
     def searchName(name):
         for row in csv_reader:
-            print(row[0])
+            
             if row[0]==name:
                 print(f'{row[0]} Name found in the file.')
             else:
@@ -102,7 +101,7 @@ with open('files/course.csv', newline='') as csv_file:
     
     
     if __name__ == "__main__":
-        
+
         print("1. Student by qualification\n2. Student count by placed student\n3. Student count by Qualification\n4. Student count who completed course but not placed\n5. Student count of placed and not placed student\n6. Search student by the given name\n7. Get all the student name only\n8. Get all the student name,qualification,score\n9. Get average success rate of the given batch\n10. Get max percentage scored Student details")
         num = int(input("Enter the choices? "))
         if num == 1:
